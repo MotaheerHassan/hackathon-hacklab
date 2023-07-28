@@ -11,6 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ESCS.Api.Contexts;
+using Microsoft.EntityFrameworkCore;
+using ESCS.Api.Repositories;
 
 namespace ESCS.Api
 {
@@ -26,12 +29,19 @@ namespace ESCS.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<ESCSDBContext>(options =>
+        options.UseSqlServer(
+        Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IEmployeeRepo, EmployeeRepo>();
+            services.AddScoped<IProjectRepo, ProjectRepo>();
+            services.AddScoped<ISkillRepo, SkillRepo>();
+            services.AddScoped<IEmpProjJuncRepo, EmpProjJuncRepo>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ESCS.Api", Version = "v1" });
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
