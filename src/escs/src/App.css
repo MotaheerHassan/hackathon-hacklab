@@ -2,7 +2,7 @@
   background-color: darkcyan;
 }
 
-.auth-form-container, .login-form, .register-form {
+.auth-form-container, .login-form, .addDetailsForm, .project-details-form {
   display: flex;
   flex-direction: column;
   width: 400px;

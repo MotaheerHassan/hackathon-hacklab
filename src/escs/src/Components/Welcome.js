@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import './Welcome.css'
+import { useNavigate } from "react-router";
 const Welcome = (props) => {
 
-  const [empId,setEmpId] = useState('')
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-    console.log(empId)
-  }
   const profileDetails =  props.profileDetails ||  {
     Name: 'Kundan Kumar',
     EmployeId: 1630,
@@ -41,6 +38,15 @@ const Welcome = (props) => {
      }
 
     ]
+
+    const navigateAddDetailsPage = () =>{
+      navigate('/adddetails')
+    }
+
+    const navigateAddProjectDetailsPage = () =>{
+      navigate('/addprojectdetails')
+    }
+
  const showprojectDetails = (projectDetails) =>{
   let ele = [];
   for (let i =0; i< projectDetails.length; i++){
@@ -53,7 +59,7 @@ const Welcome = (props) => {
         <p><strong>TechUsed:</strong> {projectsDetails[i].TechUsed}</p>
         <p><strong>Duration:</strong> {projectsDetails[i].Duration}</p>
         <p><strong>ProblemsSolved:</strong> {projectsDetails[i].ProblemsSolved}</p>
-        <button>Edit</button>
+        <button onClick={navigateAddProjectDetailsPage}>Edit Project Details </button>
       </div>)
   }
   return ele
@@ -66,7 +72,7 @@ const divs = showprojectDetails(projectsDetails);
       <div className="profile-card">
         <h2>Profile Details:</h2>
         <p><strong>Name:</strong> {profileDetails.Name}</p>
-        <p><strong>Age:</strong> {profileDetails.EmployeId}</p>
+        <p><strong>Employee Id:</strong> {profileDetails.EmployeId}</p>
         <p><strong>Email:</strong> {profileDetails.EmailId}</p>
         <p><strong>Gender:</strong> {profileDetails.Gender}</p>
         <p><strong>Designation:</strong> {profileDetails.Designation}</p>
@@ -74,7 +80,7 @@ const divs = showprojectDetails(projectsDetails);
         <p><strong>Skills:</strong> {profileDetails.Skills}</p>
         <p><strong>Interests:</strong> {profileDetails.Interest}</p>
         <p><strong>Others:</strong> {profileDetails.Others}</p>
-        <button>Edit</button>
+        <button onClick={navigateAddDetailsPage}>Edit Profile</button>
       </div>
     </div>
     <div className="separator"><p>Projects:</p></div>

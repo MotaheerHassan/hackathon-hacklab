@@ -4,16 +4,16 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [empId, setEmpId] = useState("");
-  const history = useNavigate();
+  const navigate = useNavigate();
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(empId);
   };
-  
+
   const callLandingPage = () => {
-    history("./Welcome");
+    navigate("/Welcome");
   };
 
   return (
