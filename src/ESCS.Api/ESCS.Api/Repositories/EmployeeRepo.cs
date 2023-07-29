@@ -22,7 +22,7 @@ namespace ESCS.Api.Repositories
             var apiModel = new APIModel<List<Employee>>();
             try
             {
-                apiModel.Data = _eSCSDBContext.Employees.ToList();
+                apiModel.Data = _eSCSDBContext.Employees.Include(e => e.Projects).Include(e => e.Skills).ToList();
                 apiModel.Status = 1;
             }
             catch(Exception ex)

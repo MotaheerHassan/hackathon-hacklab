@@ -49,6 +49,23 @@ namespace ESCS.Api.Controllers
             return employeeDtos;
         }
 
+        [HttpGet("all")]
+        public List<EmployeeDto> GetAll()
+        {
+            var res = new List<EmployeeDto>();
+            var emps = _employeeRepo.GetAllEmployees();
+            if(emps.Status == 1 && emps.Data.Count > 0)
+            {
+                emps.Data.ForEach(emp =>
+                {
+                    res.Add(_employeeRepo.GetEmployeeProfile(emp.Id));
+                }
+                );
+            }
+
+            return res;
+        }
+
         [HttpGet("projects/{empId}")]
         public List<ProjectDto> GetProjects(int empId)
         {
