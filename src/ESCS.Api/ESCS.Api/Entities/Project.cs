@@ -15,5 +15,10 @@ namespace ESCS.Api.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public ICollection<Skill> Skills { get; set; }
+        public ICollection<Employee> Employees { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+        public string Role { get; set; }
+        public string HardProblem { get; set; }
     }
 }

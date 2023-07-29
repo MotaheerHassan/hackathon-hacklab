@@ -19,6 +19,7 @@ namespace ESCS.Api.Entities
         public int YOE { get; set; }
         public string AreaOfInterests { get; set; }
         public ICollection<Skill> Skills { get; set; }
+        public ICollection<Project> Projects { get; set; }
     }
 
 

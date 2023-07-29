@@ -1,4 +1,5 @@
 ﻿using ESCS.Api.Dto;
+using ESCS.Api.Entities;
 using ESCS.Api.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -77,17 +78,30 @@ namespace ESCS.Api.Controllers
 
         }
 
-        //[HttpPost]
-        //public bool AddUpdateProjects(int empId, List<ProjectDto> projectDtos)
-        //{
-        //    var allProjectIdsofEmp = _empProjJuncRepo.GetAllProjectsOfAEmp(empId).Select(junc => junc.ProjectId);
-        //    var addedProjects = projectDtos.Where(dto => !allProjectIdsofEmp.Contains(dto.Id));
-        //    var updateProjects = projectDtos.Where(dto => allProjectIdsofEmp.Contains(dto.Id));
+        [HttpGet("get/{empId}")]
+        public EmployeeDto GetEmployeeProfile2(int empId)
+        {
+            return _employeeRepo.GetEmployeeProfile(empId);
 
-        //    _projectRepo.
+        }
 
-        //}
+        [HttpPost("addupdate")]
+        public bool AddUpdateEmployee([FromBody]EmployeeDto employeeDto)
+        {
+            var empProjects = employeeDto.Projects;
+            var skills = employeeDto.Skills;
 
+            var projectsUpdated = _employeeRepo.AddUpdateEmployee(new Entities.Employee {
+                Id = 4,
+                Projects = new List<Project>()
+                {
+
+                    new Project { Id = 8, Name = "UpdatedName"},
+                     new Project { Name = "NewProj1"}
+                }
+            });
+            return true;
+        }
 
     }
 }

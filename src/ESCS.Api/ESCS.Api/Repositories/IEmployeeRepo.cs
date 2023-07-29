@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace ESCS.Api.Repositories
 {
-    public interface IEmployeeRepo
+    public interface IEmployeeRepo 
     {
         APIModel<List<Employee>> GetAllEmployees();
-        APIModel<bool> AddEmployee(Employee emp);
+        APIModel<bool> AddUpdateEmployee(Employee emp);
         APIModel<Employee> GetEmployee(int id);
+        EmployeeDto GetEmployeeProfile(int empId);
     }
 }
