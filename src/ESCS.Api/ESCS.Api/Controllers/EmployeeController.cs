@@ -13,10 +13,6 @@ namespace ESCS.Api.Controllers
     [Route("[controller]")]
     public class EmployeeController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
         private readonly IEmployeeRepo _employeeRepo;
         private readonly IEmpProjJuncRepo _empProjJuncRepo;
         private readonly IProjectRepo _projectRepo;
@@ -34,7 +30,7 @@ namespace ESCS.Api.Controllers
             List<EmployeeDto> employeeDtos = new List<EmployeeDto>();
             var employees = _employeeRepo.GetAllEmployees();
             var empProjJuncs = _empProjJuncRepo.GetAllEmpProjJuncs();
-            employees.ForEach(emp =>
+            employees.Data.ForEach(emp =>
             {
                 var projectIds = empProjJuncs.Where(junc => junc.EmpId == emp.Id).Select(junc => junc.ProjectId);
                 var projects = _projectRepo.GetAllProjects().Where(p => projectIds.Contains(p.Id));
@@ -48,5 +44,7 @@ namespace ESCS.Api.Controllers
 
             return employeeDtos;
         }
+
+
     }
 }

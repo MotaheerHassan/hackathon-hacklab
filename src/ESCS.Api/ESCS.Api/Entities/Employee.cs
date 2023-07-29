@@ -18,6 +18,7 @@ namespace ESCS.Api.Entities
         public string CurrentDesignation { get; set; }
         public int YOE { get; set; }
         public string AreaOfInterests { get; set; }
+        public ICollection<Skill> Skills { get; set; }
     }
 
 

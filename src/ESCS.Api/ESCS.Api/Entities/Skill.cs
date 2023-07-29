@@ -16,5 +16,7 @@ namespace ESCS.Api.Entities
         {
             get; set;
         }
+        public ICollection<Employee> Employees { get; set; }
+        public ICollection<Project> Projects { get; set; }
     }
 }
