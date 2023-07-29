@@ -9,5 +9,7 @@ namespace ESCS.Api.Repositories
     public interface IEmpProjJuncRepo
     {
         List<ProjEmpJunc> GetAllEmpProjJuncs();
+        List<ProjEmpJunc> GetAllEmpIdsInAproject(int projId);
+        List<ProjEmpJunc> GetAllProjectsOfAEmp(int empId);
     }
 }

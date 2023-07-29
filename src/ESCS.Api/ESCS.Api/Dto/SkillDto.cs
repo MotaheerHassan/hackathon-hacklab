@@ -5,13 +5,9 @@ using System.Threading.Tasks;
 
 namespace ESCS.Api.Dto
 {
-    public class ProjectDto
+    public class SkillDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public DateTime? StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
-        public string Role { get; set; }
-        public List<SkillDto> Skills { get; set; }
     }
 }

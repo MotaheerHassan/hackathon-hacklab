@@ -19,5 +19,15 @@ namespace ESCS.Api.Repositories
         {
             return _eSCSDBContext.ProjEmpJuncs.ToList();
         }
+
+        public List<ProjEmpJunc> GetAllEmpIdsInAproject(int projId)
+        {
+            return _eSCSDBContext.ProjEmpJuncs.Where(junc => junc.ProjectId == projId).ToList();
+        }
+
+        public List<ProjEmpJunc> GetAllProjectsOfAEmp(int empId)
+        {
+            return _eSCSDBContext.ProjEmpJuncs.Where(junc => junc.EmpId == empId).ToList();
+        }
     }
 }

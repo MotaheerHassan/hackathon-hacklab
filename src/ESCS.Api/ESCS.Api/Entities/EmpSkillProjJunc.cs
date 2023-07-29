@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace ESCS.Api.Entities
 {
-    public class EmpSkillJunc
+    public class EmpSkillProjJunc
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AssociationId { get; set; }
-        public int EmpId { get; set; }
-        public int SkillId { get; set; }
-        public int YOE { get; set; }
+        public int ProjEmpAssociationId { get; set; }
+        public Skill Skill { get; set; }
     }
 }

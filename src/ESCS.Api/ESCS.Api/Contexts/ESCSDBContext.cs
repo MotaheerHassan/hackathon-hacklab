@@ -20,5 +20,6 @@ namespace ESCS.Api.Contexts
         //public DbSet<ProjectSkillJunc> ProjectSkillJuncs { get; set; }
         //public DbSet<EmpSkillJunc> empSkillJuncs { get; set; }
         public DbSet<ProjEmpJunc> ProjEmpJuncs { get; set; }
+        public DbSet<EmpSkillProjJunc> EmpSkillProjJuncs { get; set; }
     }
 }

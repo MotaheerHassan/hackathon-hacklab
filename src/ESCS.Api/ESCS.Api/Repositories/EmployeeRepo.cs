@@ -67,5 +67,43 @@ namespace ESCS.Api.Repositories
                 return apiModel;
             }
         }
+
+        public APIModel<bool> AddUpdateProjects(int empId, List<Project> projects)
+        {
+            var apiModel = new APIModel<bool>();
+            try
+            {
+                 var emp = _eSCSDBContext.Employees.FirstOrDefault(e => e.Id == empId);
+                _eSCSDBContext.SaveChanges();
+                apiModel.Data = true;
+                apiModel.Status = 1;
+                return apiModel;
+            }
+            catch (Exception ex)
+            {
+                apiModel.Status = 0;
+                apiModel.Error = new Error(ex.Message, ex.ToString());
+                return apiModel;
+            }
+        }
+
+        public APIModel<bool> AddUpdateEmployeeProfile(EmployeeDto employeeDto)
+        {
+            var apiModel = new APIModel<bool>();
+            try
+            {
+                var emp = _eSCSDBContext.Employees.FirstOrDefault(e => e.Id == 0);
+                _eSCSDBContext.SaveChanges();
+                apiModel.Data = true;
+                apiModel.Status = 1;
+                return apiModel;
+            }
+            catch (Exception ex)
+            {
+                apiModel.Status = 0;
+                apiModel.Error = new Error(ex.Message, ex.ToString());
+                return apiModel;
+            }
+        }
     }
 }
