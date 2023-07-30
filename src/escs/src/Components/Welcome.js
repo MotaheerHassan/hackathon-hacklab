@@ -83,7 +83,7 @@ const divs = showprojectDetails(projectsDetails);
         <button onClick={navigateAddDetailsPage}>Edit Profile</button>
       </div>
     </div>
-    <div className="separator"><p>Projects:</p></div>
+    <div className="separator"><p className="seperatorText">Projects:</p></div>
     <div className="ProjectDetails">
       <div className="EditProjectDetails">
           <div className="project-container">

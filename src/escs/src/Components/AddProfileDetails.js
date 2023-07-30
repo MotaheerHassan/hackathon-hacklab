@@ -24,6 +24,7 @@ const AddDetails = () => {
           placeholder="Enter Name"
           id="name"
           name="name"
+          autoComplete="off"
           onChange={(e) => setName(e.target.value)}
         />
         <label htmlFor="empId">Employee Id</label>
@@ -33,6 +34,7 @@ const AddDetails = () => {
           placeholder="Enter Employee Id"
           id="empId"
           name="empId"
+          autoComplete="off"
           onChange={(e) => setEmployeeId(e.target.value)}
         />
         <label>Email Id</label>
@@ -42,6 +44,7 @@ const AddDetails = () => {
           placeholder="Enter Email"
           id="email"
           name="email"
+          autoComplete="off"
           onChange={(e) => setEmail(e.target.value)}
         />
         <label>Gender</label>
@@ -51,6 +54,7 @@ const AddDetails = () => {
           placeholder="Enter Gender"
           id="gender"
           name="gender"
+          autoComplete="off"
           onChange={(e) => setGender(e.target.value)}
         />
         <label htmlFor="currDesg">Current Designation</label>
@@ -59,6 +63,7 @@ const AddDetails = () => {
           type="text"
           placeholder="Enter Current Designation"
           name="currDesg"
+          autoComplete="off"
           onChange={(e) => setDesignation(e.target.value)}
         />
         <label>Years Of Experience</label>
@@ -66,6 +71,7 @@ const AddDetails = () => {
           value={yoe}
           type="text"
           placeholder="Enter Years of Experience"
+          autoComplete="off"
           onChange={(e) => setYoe(e.target.value)}
         />
         <label htmlFor="ttwo">Tech/Tools Worked on</label>
@@ -74,10 +80,11 @@ const AddDetails = () => {
           type="Enter Tools/ Technology Names"
           name="ttwo"
           id="ttwo"
+          autoComplete="off"
           onChange={(e) => setTtwo(e.target.value)}
         />
         <label htmlFor="aoi">
-          Area of Intrest (or Tech stack want to work on)
+          Area of Interest (or Tech stack want to work on)
         </label>
         <input
           value={aoi}
@@ -85,6 +92,7 @@ const AddDetails = () => {
           placeholder="Enter Area of Intrest"
           id="aoi"
           name="aoi"
+          autoComplete="off"
           onChange={(e) => setAoi(e.target.value)}
         />
         <button type="submit">Submit Profile Details</button>

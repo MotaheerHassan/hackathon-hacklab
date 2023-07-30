@@ -49,6 +49,11 @@ margin-top:20px;
   margin: 8px 0;
 }
 
+.seperatorText{
+  font-size: 24px;
+}
+
+
 .profile-card h1 {
   margin-bottom: 20px;
   border-bottom: 2px solid #333;

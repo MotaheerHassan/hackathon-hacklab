@@ -27,6 +27,7 @@ const Login = () => {
           name="empId"
           id="empId"
           placeholder="Employee Id"
+          autoComplete="off"
         />
         <button type="submit" onClick={callLandingPage}>
           Log In

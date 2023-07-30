@@ -11,7 +11,7 @@ const AddProjectDetails = () => {
   const [role, setRole] = useState("");
 
   const handleProjectDetailsSubmit = () =>{
-    
+
   }
 
   return (
@@ -27,6 +27,7 @@ const AddProjectDetails = () => {
           placeholder="Enter Project Name"
           id="projectName"
           name="projectName"
+          autoComplete="off"
           onChange={(e) => setProjectName(e.target.value)}
         />
         <label htmlFor="projectDescription">Project Description</label>
@@ -36,6 +37,7 @@ const AddProjectDetails = () => {
           placeholder="Enter Project Description"
           id="projectDescription"
           name="projectDescription"
+          autoComplete="off"
           onChange={(e) => setProjectDesc(e.target.value)}
         />
         <label htmlFor="startDate">Start Date</label>
@@ -45,6 +47,7 @@ const AddProjectDetails = () => {
           placeholder="Enter date"
           id="startDate"
           name="startDate"
+          autoComplete="off"
           onChange={(e) => setStartDate(e.target.value)}
         />
         <label htmlFor="endDate">End Date</label>
@@ -54,6 +57,7 @@ const AddProjectDetails = () => {
           placeholder="Enter End Date"
           id="endDate"
           name="endDate"
+          autoComplete="off"
           onChange={(e) => setEndDate(e.target.value)}
         />
         <label htmlFor="achievements">Achievements</label>
@@ -63,6 +67,7 @@ const AddProjectDetails = () => {
           placeholder="Enter Achievements"
           name="achievements"
           id="achievements"
+          autoComplete="off"
           onChange={(e) => setAchievements(e.target.value)}
         />
         <label htmlFor="skills">Skills</label>
@@ -72,6 +77,7 @@ const AddProjectDetails = () => {
           placeholder="Enter Skills"
           id="skills"
           name="skills"
+          autoComplete="off"
           onChange={(e) => setSkills(e.target.value)}
         />
         <label htmlFor="role">Role</label>
@@ -80,6 +86,7 @@ const AddProjectDetails = () => {
           type="Enter Role"
           name="role"
           id="role"
+          autoComplete="off"
           onChange={(e) => setRole(e.target.value)}
         />
         <button type="submit">Submit Project Details</button>
